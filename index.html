@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Both Sides of the Table | The Weber County Hive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0e2233;
+    --navy-deep:#081726;
+    --steel:#3c5a70;
+    --blueprint:#5aa3c9;
+    --blueprint-line:#5aa3c944;
+    --paper:#eef2f4;
+    --paper-card:#ffffff;
+    --ink:#0e2233;
+    --ink-soft:#4a5c6a;
+    --amber:#d98e34;
+    --rule:#d3dde2;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;line-height:1.65;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+  a{color:var(--steel);}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;}
+
+  .topbar{
+    background:var(--navy-deep);color:#a9c2d1;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;
+  }
+  .topbar .wrap{display:flex;gap:20px;padding:9px 24px;flex-wrap:wrap;justify-content:space-between;}
+  .topbar .left{display:flex;gap:20px;}
+  .topbar a{color:#a9c2d1;text-decoration:none;border-bottom:1px dotted #5a7688;}
+  .topbar a.substack{color:var(--blueprint);border-bottom-color:var(--blueprint);}
+
+  header.masthead{
+    background:var(--navy);
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0 39px, var(--blueprint-line) 39px 40px),
+      repeating-linear-gradient(90deg, transparent 0 39px, var(--blueprint-line) 39px 40px);
+    color:#eef2f4;
+    padding:56px 0 44px;
+    border-bottom:4px solid var(--blueprint);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--blueprint);margin:0 0 12px;
+  }
+  h1.headline{
+    font-weight:700;font-size:clamp(30px,5vw,46px);margin:0 0 16px;line-height:1.1;
+  }
+  .dek{font-size:17px;color:#c3d3dc;max-width:64ch;margin:0;}
+
+  main{padding:44px 0 60px;}
+  .intro{font-size:15.5px;color:var(--ink-soft);max-width:70ch;margin-bottom:32px;}
+
+  .grid{display:flex;flex-direction:column;gap:16px;}
+  .card{
+    background:var(--paper-card);
+    border:1px solid var(--rule);
+    border-left:5px solid var(--blueprint);
+    border-radius:4px;
+    padding:22px 26px;
+    text-decoration:none;
+    color:inherit;
+    display:block;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .card:hover, .card:focus-visible{
+    transform:translateX(3px);
+    box-shadow:0 4px 16px rgba(14,34,51,.12);
+  }
+  .card .tab{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--steel);margin-bottom:6px;display:block;
+  }
+  .card h3{font-size:19px;margin:0 0 8px;color:var(--navy);}
+  .card p{margin:0 0 12px;font-size:14.5px;color:var(--ink-soft);}
+  .card .meta{
+    display:flex;gap:10px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:11px;
+  }
+  .card .meta span{
+    background:#eef2f4;border:1px solid var(--rule);border-radius:10px;
+    padding:2px 9px;color:var(--steel);
+  }
+
+  .placeholder{
+    border:1px dashed var(--rule);border-left:5px dashed var(--rule);
+    background:transparent;color:var(--ink-soft);
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;
+    padding:18px 26px;
+  }
+
+  footer{
+    background:var(--navy-deep);color:#8fa7b5;padding:28px 0;
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;
+  }
+  footer a{color:var(--blueprint);}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="left">
+      <a href="https://weber-county-hive.github.io/-weber-county-hive-index/">Master index</a>
+    </div>
+    <a class="substack" href="https://webercountyhive.substack.com" target="_blank" rel="noopener">Read on Substack &rarr;</a>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">The Weber County Hive</p>
+    <h1 class="headline">Both Sides of the Table</h1>
+    <p class="dek">The same private firm, planning what gets built and certifying that it was built right. The same consultant, writing the feasibility study and later cashing in as the deal's own banker. Case files on the vendors and consultants who sit on more than one side of a public decision.</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="intro">Every entry below is sourced entirely from public records &mdash; a government website, a company's own project pages, a public bid posting, or a filed corporate record. No records request was needed for any of it. Click a case to open the full file.</p>
+
+    <div class="grid" id="docket"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    The Weber County Hive welcomes corrections supported by original records, contracts, meeting minutes, or public filings. <a href="https://webercountyhive.substack.com" target="_blank" rel="noopener">Read more on Substack</a>.
+  </div>
+</footer>
+
+<script src="both-sides-data.js?v=1"></script>
+<script>
+  const docket = document.getElementById('docket');
+
+  if (typeof CASES === 'undefined' || !Array.isArray(CASES) || CASES.length === 0) {
+    docket.innerHTML = '<div class="placeholder">No case files found. Check that both-sides-data.js is uploaded alongside this file.</div>';
+  } else {
+    docket.innerHTML = CASES.map(c => `
+      <a class="card" href="${c.link}">
+        <span class="tab">${c.tab || 'Case File'}</span>
+        <h3>${c.title}</h3>
+        <p>${c.summary}</p>
+        <div class="meta">
+          ${(c.tags || []).map(t => `<span>${t}</span>`).join('')}
+        </div>
+      </a>
+    `).join('') + '<div class="placeholder">Next case file: TBD &mdash; add a new object to both-sides-data.js as more firms are identified.</div>';
+  }
+</script>
+
+</body>
+</html>

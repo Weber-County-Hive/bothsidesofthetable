@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Firm, Every Seat: JUB Engineers in Weber County</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0e2233;
+    --navy-deep:#081726;
+    --steel:#3c5a70;
+    --blueprint:#5aa3c9;
+    --blueprint-line:#5aa3c944;
+    --paper:#eef2f4;
+    --paper-card:#ffffff;
+    --ink:#0e2233;
+    --ink-soft:#4a5c6a;
+    --amber:#d98e34;
+    --rule:#d3dde2;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;line-height:1.65;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+  a{color:var(--steel);}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  .topbar{
+    background:var(--navy-deep);color:#a9c2d1;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;
+  }
+  .topbar .wrap{display:flex;gap:20px;padding:9px 24px;flex-wrap:wrap;justify-content:space-between;}
+  .topbar .left{display:flex;gap:20px;}
+  .topbar a{color:#a9c2d1;text-decoration:none;border-bottom:1px dotted #5a7688;}
+  .topbar a.substack{color:var(--blueprint);border-bottom-color:var(--blueprint);}
+
+  header.masthead{
+    background:var(--navy);
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0 39px, var(--blueprint-line) 39px 40px),
+      repeating-linear-gradient(90deg, transparent 0 39px, var(--blueprint-line) 39px 40px);
+    color:#eef2f4;
+    padding:52px 0 42px;
+    border-bottom:4px solid var(--blueprint);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--blueprint);margin:0 0 12px;
+  }
+  h1.headline{
+    font-weight:700;font-size:clamp(28px,4.6vw,42px);margin:0 0 14px;line-height:1.12;
+  }
+  .dek{font-size:16.5px;color:#c3d3dc;max-width:62ch;margin:0 0 16px;}
+  .stat-row{display:flex;gap:28px;flex-wrap:wrap;margin-top:20px;}
+  .stat{font-family:'IBM Plex Mono',monospace;}
+  .stat .num{font-size:26px;color:var(--blueprint);font-weight:600;display:block;}
+  .stat .lbl{font-size:11px;color:#8fa7b5;text-transform:uppercase;letter-spacing:.05em;}
+
+  section{padding:40px 0;}
+  section.tight{padding:24px 0;}
+  h2{font-size:24px;margin:0 0 18px;padding-bottom:8px;border-bottom:2px solid var(--navy);}
+  h3{font-size:17px;margin:0 0 8px;color:var(--navy);}
+  p{margin:0 0 14px;max-width:74ch;}
+
+  .startbox{
+    background:var(--paper-card);border:1px solid var(--rule);
+    border-left:5px solid var(--blueprint);padding:20px 24px;
+  }
+  .startbox ol{margin:0;padding-left:20px;}
+  .startbox li{margin-bottom:8px;}
+
+  .rolegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;}
+  .rolecard{
+    background:var(--paper-card);border:1px solid var(--rule);
+    border-radius:4px;padding:16px 18px;
+  }
+  .rolecard .role{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--blueprint);
+    text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;display:block;
+  }
+  .rolecard h3{font-size:15.5px;margin-bottom:6px;}
+  .rolecard p{font-size:13.5px;color:var(--ink-soft);margin:0;}
+
+  .flagcard{
+    background:var(--paper-card);border:1px solid var(--amber);border-left:5px solid var(--navy);
+    padding:18px 22px;margin-bottom:16px;
+  }
+  .flagcard .tag{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--amber);
+    letter-spacing:.05em;margin-bottom:8px;display:block;font-weight:600;
+  }
+  .flagcard h3{margin-bottom:6px;}
+
+  table.projects{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--paper-card);border:1px solid var(--rule);}
+  table.projects th{
+    background:var(--navy);color:#eef2f4;text-align:left;padding:9px 10px;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;
+  }
+  table.projects td{padding:9px 10px;border-top:1px solid var(--rule);vertical-align:top;}
+  table.projects tr:nth-child(even) td{background:#f5f8f9;}
+  .status{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;padding:2px 8px;border-radius:10px;
+    display:inline-block;
+  }
+  .status.final{background:#dcefe1;color:#276b3f;}
+  .status.pending{background:#fbedd4;color:#8a5a10;}
+  .status.cancelled{background:#f6dedb;color:#a1402f;}
+  .status.rejected{background:#f2c4bc;color:#8f2a17;}
+
+  .toggle-note{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-soft);
+    margin-bottom:12px;
+  }
+
+  footer{
+    background:var(--navy-deep);color:#8fa7b5;padding:28px 0;
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;
+  }
+  footer a{color:var(--blueprint);}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="left">
+      <a href="index.html">&larr; Both Sides of the Table</a>
+      <a href="https://weber-county-hive.github.io/-weber-county-hive-index/">Master index</a>
+    </div>
+    <a class="substack" href="https://webercountyhive.substack.com" target="_blank" rel="noopener">Read on Substack &rarr;</a>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">Weber County &middot; Ogden Valley &middot; Vendor Records</p>
+    <h1 class="headline">One Firm, Every Seat</h1>
+    <p class="dek">J-U-B Engineers writes Ogden Valley City's founding land-use plan. It also serves as the city's own engineer. Nine other government and quasi-government bodies in the same small area hire the same firm &mdash; including the two ski resorts a boundary committee kept out of the city altogether.</p>
+    <div class="stat-row">
+      <div class="stat"><span class="num">9+</span><span class="lbl">client bodies</span></div>
+      <div class="stat"><span class="num">24</span><span class="lbl">posted projects</span></div>
+      <div class="stat"><span class="num">2018&ndash;2026</span><span class="lbl">project span</span></div>
+      <div class="stat"><span class="num">2</span><span class="lbl">roles, same city</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="tight">
+  <div class="wrap startbox">
+    <h3>How to read this</h3>
+    <ol>
+      <li>J-U-B Engineers Inc. is a private, for-profit consulting firm &mdash; not a government agency.</li>
+      <li>Ogden Valley City, incorporated in January 2026, has no in-house planning or engineering department. It hired J-U-B for both.</li>
+      <li>Below, every confirmed client relationship is sourced to a public record &mdash; the city's own website, JUB's own project pages, or public bid postings. No records request was needed for any of it.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Two roles, one city, no separation</h2>
+    <div class="rolegrid">
+      <div class="rolecard">
+        <span class="role">Planner</span>
+        <h3>Brian Carver</h3>
+        <p>Planning Manager, J-U-B Engineers. Writes Ogden Valley City's general plan, transportation master plan, and zoning roadmap &mdash; the document that sets what gets built where.</p>
+      </div>
+      <div class="rolecard">
+        <span class="role">Deputy City Engineer</span>
+        <h3>Matthew Crump, P.E.</h3>
+        <p>A separate J-U-B employee, serving as the city's own engineering authority &mdash; the role that checks whether what gets built meets standards.</p>
+      </div>
+    </div>
+    <p style="margin-top:16px">Confirmed directly on the city's own website: "Ogden Valley City has contracted with J-U-B Engineers, Inc. to provide a broad spectrum of engineering and community planning services." Council-level oversight of the engineering role is provided by a single councilmember, not an independent engineering department. For a city with no staff of its own, the firm that plans what should be built and the firm that certifies it was built right are the same firm.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Where the threads connect</h2>
+
+    <div class="flagcard">
+      <span class="tag">THE BOUNDARY</span>
+      <h3>JUB serves Powder Mountain &mdash; the resort the city excluded</h3>
+      <p>Powder Mountain was deliberately kept outside Ogden Valley City's incorporation boundary by a committee that included the resort's current president. JUB does direct infrastructure work for the resort itself &mdash; a water line project (2025) and sewer lagoon maintenance (2023), both posted under "Powder Mountain Water" and "Powder Mountain Sewer." The same firm sits on both sides of the line that boundary drew.</p>
+    </div>
+
+    <div class="flagcard">
+      <span class="tag">THE TRACK RECORD</span>
+      <h3>JUB has a history of winning regional grant money for clients</h3>
+      <p>Per JUB's own marketing material, the firm "helped obtain nearly $24 million dollars from the Wasatch Front Regional Council Surface Transportation Program" for a different client city, Clinton City. Ogden Valley City's own planning work is funded through a similar WFRC program (Transportation and Land Use Connection).</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Every confirmed client body</h2>
+    <p>Nine separate government or quasi-government entities across Weber County, all retaining J-U-B for planning, engineering, or bid-solicitation work.</p>
+    <div class="rolegrid">
+      <div class="rolecard"><span class="role">City government</span><h3>Ogden Valley City</h3><p>General plan + Deputy City Engineer</p></div>
+      <div class="rolecard"><span class="role">Irrigation company</span><h3>Huntsville Irrigation Company</h3><p>Engineer-of-record, ditch piping project</p></div>
+      <div class="rolecard"><span class="role">Special district</span><h3>Ogden Valley Parks Service Area</h3><p>Liberty Park master plan redesign</p></div>
+      <div class="rolecard"><span class="role">Resort infrastructure</span><h3>Powder Mountain Water</h3><p>West water line project</p></div>
+      <div class="rolecard"><span class="role">Resort infrastructure</span><h3>Powder Mountain Sewer</h3><p>Sewer lagoon maintenance</p></div>
+      <div class="rolecard"><span class="role">Water company</span><h3>Liberty Pipeline Company</h3><p>Booster pump + transmission line, Eden</p></div>
+      <div class="rolecard"><span class="role">Water company</span><h3>Eden Water Works Company</h3><p>Highway 158 waterline project</p></div>
+      <div class="rolecard"><span class="role">Canal company</span><h3>Huntsville South Bench Canal Co.</h3><p>Ditch piping project &mdash; only rejected bid on record</p></div>
+      <div class="rolecard"><span class="role">Farm irrigation</span><h3>Co-op Farm Irrigation</h3><p>Canal pressurization project, cancelled then re-posted</p></div>
+    </div>
+    <p style="margin-top:16px">Outside Ogden Valley proper, J-U-B's biggest recurring Weber County client by project count is the <strong>Bona Vista Water Improvement District</strong> &mdash; at least ten separate waterline and tank projects across Harrisville, Marriott-Slaterville, Pleasant View, and unincorporated Weber County since 2018.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Full project history</h2>
+    <p class="toggle-note">Sourced from J-U-B's own QuestCDN bid-posting record (Provider ID 1575650), newest first.</p>
+    <table class="projects">
+      <tr><th>Project</th><th>Client</th><th>Location</th><th>Posted</th><th>Status</th></tr>
+      <tr><td>North Ogden Community Pond</td><td>North Ogden City</td><td>North Ogden</td><td>2026-03-19</td><td><span class="status final">Final</span></td></tr>
+      <tr><td>Harrisville Road Waterline: Phase 3</td><td>Bona Vista WID</td><td>Harrisville</td><td>2026-02-04</td><td><span class="status pending">Pending</span></td></tr>
+      <tr><td>1700 S Waterline Project</td><td>Bona Vista WID</td><td>Marriott-Slaterville</td><td>2025-09-04</td><td><span class="status pending">Pending</span></td></tr>
+      <tr><td>Harrisville Road Phase 2</td><td>Bona Vista WID</td><td>Harrisville</td><td>2025-08-28</td><td><span class="status pending">Pending</span></td></tr>
+      <tr><td>CO-OP/HSBCC Canal Pressurization</td><td>Co-op Farm Irrigation</td><td>Huntsville</td><td>2025-08-21</td><td><span class="status final">Final</span></td></tr>
+      <tr><td>Powder Mountain West Water Line</td><td>Powder Mountain Water</td><td>Powder Mountain Resort</td><td>2025-07-29</td><td><span class="status pending">Pending</span></td></tr>
+      <tr><td>W Harrisville Road Waterline</td><td>Bona Vista WID</td><td>Harrisville</td><td>2025-06-24</td><td><span class="status pending">Pending</span></td></tr>
+      <tr><td>3MG Hot Springs Tank</td><td>Bona Vista WID</td><td>Pleasant View</td><td>2024-12-19</td><td><span class="status pending">Pending</span></td></tr>
+      <tr><td>CO-OP/HSBCC Canal Pressurization (orig.)</td><td>Co-op Farm Irrigation</td><td>Huntsville</td><td>2024-11-07</td><td><span class="status cancelled">Cancelled</span></td></tr>
+      <tr><td>Liberty Pipeline Booster Pump Station</td><td>Liberty Pipeline Co.</td><td>Eden</td><td>2024-01-17</td><td><span class="status pending">Pending</span></td></tr>
+      <tr><td>Liberty Pipeline Transmission Line</td><td>Liberty Pipeline Co.</td><td>Eden</td><td>2024-01-17</td><td><span class="status pending">Pending</span></td></tr>
+      <tr><td>Powder Mountain Sewer Lagoons Maintenance</td><td>Powder Mountain Sewer</td><td>Eden</td><td>2023-11-29</td><td><span class="status pending">Pending</span></td></tr>
+      <tr><td>4000 North Canal Crossing Project</td><td>Bona Vista WID</td><td>Unincorporated</td><td>2023-10-12</td><td><span class="status final">Final</span></td></tr>
+      <tr><td>Bay Enclosure Project</td><td>Ben Quick (individual)</td><td>Ogden</td><td>2023-08-01</td><td><span class="status pending">Pending</span></td></tr>
+      <tr><td>Hwy 158/2200 N Waterline</td><td>Eden Water Works Co.</td><td>Eden</td><td>2023-08-01</td><td><span class="status pending">Pending</span></td></tr>
+      <tr><td>Weber-Box Elder Conservation Dist. Meters</td><td>Weber-Box Elder Cons. Dist.</td><td>Plain City/Harrisville</td><td>2023-03-01</td><td><span class="status final">Final</span></td></tr>
+      <tr><td>South Ogden Conservation Dist. Meters</td><td>South Ogden Cons. Dist.</td><td>Ogden</td><td>2023-03-01</td><td><span class="status final">Final</span></td></tr>
+      <tr><td>5500 West-4200 South to 3550 South</td><td>J-U-B Engineers (self)</td><td>Hooper</td><td>2022-12-21</td><td><span class="status pending">Pending</span></td></tr>
+      <tr><td>Huntsville South Bench Canal Ditch Piping</td><td>Huntsville South Bench Canal Co.</td><td>Huntsville</td><td>2022-03-31</td><td><span class="status rejected">Rejected</span></td></tr>
+      <tr><td>1900 North Waterline Project</td><td>Bona Vista WID</td><td>Plain City</td><td>2021-02-02</td><td><span class="status pending">Pending</span></td></tr>
+      <tr><td>700 North Waterline Project</td><td>Bona Vista WID</td><td>Harrisville</td><td>2021-02-02</td><td><span class="status pending">Pending</span></td></tr>
+      <tr><td>Harrisville Heights Waterline</td><td>Bona Vista WID</td><td>Harrisville</td><td>2021-02-02</td><td><span class="status pending">Pending</span></td></tr>
+      <tr><td>Hooper 4700 West (5100 S-5500 S)</td><td>Hooper City Corporation</td><td>Hooper</td><td>2019-02-05</td><td><span class="status pending">Pending</span></td></tr>
+      <tr><td>North Ogden 3.0 MG Water Tank</td><td>Bona Vista WID</td><td>North Ogden</td><td>2018-05-15</td><td><span class="status pending">Pending</span></td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Sources: Ogden Valley City's own website (ogdenvalley.gov); J-U-B Engineers' own project pages (jub.com); public QuestCDN bid postings (Provider ID 1575650). This page states what the record shows; it does not characterize any finding as a legal violation. <a href="https://webercountyhive.substack.com" target="_blank" rel="noopener">Read more on Substack</a>.
+  </div>
+</footer>
+
+</body>
+</html>
